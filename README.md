@@ -1,15 +1,15 @@
-# <div align="center">🚀 Aldehyde-LX: The Ultimate Productivity Powerhouse 🚀</div>
+# <div align="center">🚀 Aldehyde: The Ultimate Productivity Powerhouse 🚀</div>
 
 <div align="center">
-  <img src="https://example.com/aldehyde-lx-logo.png" alt="Aldehyde-LX Logo" width="300" />
-  <p><em>A custom Linux bootc image built for speed, efficiency, and seamless workflows. Tailored for users like MrGrappleMan who demand peak performance! 💪</em></p>
+  <img src="https://example.com/aldehyde-lx-logo.png" alt="Aldehyde Logo" width="300" />
+  <p><em>Built for speed, efficiency, and seamless workflows</em></p>
 </div>
 
 ## 📖 Overview
 
-Aldehyde-LX is a pre-configured Linux bootc image based on [bootc](https://github.com/containers/bootc) technology, designed for immutable OS environments like Fedora Atomic or similar. It combines a sleek Cosmic desktop environment with performance tweaks, essential tools, and automation for a buttery-smooth experience. Whether you're coding, browsing, or managing servers, this image has you covered. 🌟
+Aldehyde is a pre-configured Linux bootc image based on [Bazzite-DX](). It combines a sleek Cosmic desktop environment with performance tweaks, essential tools, and automation for a practical user enviroment. Whether you're coding, browsing, gaming, or managing servers, this image has you covered. 🌟
 
-No more manual setups – everything is baked in and ready to roll! 🎉
+No more post install scripts – everything is baked in and ready to roll! 🎉
 
 ## ✨ Key Features
 
