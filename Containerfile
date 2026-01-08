@@ -2,13 +2,12 @@
 FROM scratch AS ctx
 COPY build_files /
 
-# Base Image - we will be using Bazzite-DX GNOME, check yours with 'sudo bootc status'
+# Base Image - Bazzite-DX GNOME, check current with 'sudo bootc status'
 FROM ghcr.io/ublue-os/bazzite-dx-gnome:latest
-
 # uBlue Image list: https://github.com/orgs/ublue-os/packages
 # COSMIC Rawhide Image: here
 
-### [IM]MUTABLE /opt
+### IMMUTABLE /opt
 ## Some bootable images, like Fedora, have /opt symlinked to /var/opt, in order to
 ## make it mutable/writable for users. However, some packages write files to this directory,
 ## thus its contents might be wiped out when bootc deploys an image, making it troublesome for
@@ -17,11 +16,15 @@ FROM ghcr.io/ublue-os/bazzite-dx-gnome:latest
 ## Uncomment the following line if one desires to make /opt immutable and be able to be used
 ## by the package manager.
 
-# RUN rm /opt && mkdir /opt
+# RUN rm -rf /opt && mkdir /opt
 
 ### MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
+
+# Systemd
+RUN systemctl enable bootc-fetch-apply-updates.timer uupd.timer
+RUN systemctl mask rpm-ostreed-automatic.service rpm-ostreed-automatic.timer
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
